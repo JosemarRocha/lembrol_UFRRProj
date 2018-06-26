@@ -19,6 +19,7 @@ export class MyApp {
   rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any}>;
+  pages2: any;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -32,6 +33,15 @@ export class MyApp {
       { title: 'Configurações', component: ConfigPage},
       { title: 'Sobre', component: SobrePage}
     ];
+
+    this.pages2 = {
+      homePage: HomePage,
+      perfilPage: PerfilPage,
+      calendarioPage: CalendarioPage,
+      anotacoesPage: AnotacoesPage,
+      configPage: ConfigPage,
+      sobrePage: SobrePage,
+    }
 
   }
 
@@ -50,3 +60,4 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 }
+
