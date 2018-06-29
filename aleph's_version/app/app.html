@@ -1,0 +1,47 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>
+        Menu
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list no-lines>
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.homePage)">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </button>
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.perfilPage)">
+        <ion-icon name="person"></ion-icon>
+        Perfil
+      </button>
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.calendarioPage)">
+        <ion-icon name="calendar"></ion-icon>
+        Calendário
+      </button>
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.anotacoesPage)">
+        <ion-icon name="paper"></ion-icon>
+        Anotações
+      </button>
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.configPage)">
+        <ion-icon name="cog"></ion-icon>
+        Configurações
+      </button>
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.sobrePage)">
+        <ion-icon name="information-circle"></ion-icon>
+        Sobre
+      </button>
+    </ion-list>
+  </ion-content>
+  <ion-footer no-shadow>
+      <ion-toolbar position="bottom">
+        <button color="danger" ion-button clear><ion-icon name="exit"></ion-icon>Sair</button>
+      </ion-toolbar>
+    </ion-footer>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
