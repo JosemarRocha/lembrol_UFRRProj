@@ -17,36 +17,49 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { auth } from 'firebase';
+import { AddNotePage } from '../pages/add-note/add-note';
+import { NoteService } from '../providers/note-service/note-service';
+import { IonicStorageModule } from '@ionic/storage';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ViewNotePage } from '../pages/view-note/view-note';
 
 @NgModule({
   declarations: [
     MyApp,
     CalendarioPage,
     AnotacoesPage,
+    AddNotePage,
+    ViewNotePage,
     PerfilPage,
     ConfigPage,
-    SobrePage
+    SobrePage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
-    AngularFireModule
+    AngularFireModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     CalendarioPage,
+    AddNotePage,
     AnotacoesPage,
+    ViewNotePage,
     PerfilPage,
     ConfigPage,
-    SobrePage
+    SobrePage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    NoteService,
   ]
 })
 export class AppModule {}

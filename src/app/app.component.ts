@@ -8,6 +8,9 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { AnotacoesPage } from '../pages/anotacoes/anotacoes';
 import { ConfigPage } from '../pages/config/config';
 import { SobrePage } from '../pages/sobre/sobre';
+//import { HomePageModule } from '../pages/home/home.module';
+import { HomePage } from '../pages/home/home';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +28,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      //{ title: 'Home', component: HomePage },
+      { title: 'Home', component: HomePage },
       { title: 'Perfil', component: PerfilPage},
       { title: 'Calendário', component: CalendarioPage},
       { title: 'Anotações', component: AnotacoesPage},
