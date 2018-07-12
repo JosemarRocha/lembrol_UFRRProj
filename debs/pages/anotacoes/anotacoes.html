@@ -1,0 +1,25 @@
+
+<ion-header>
+
+  <ion-navbar color="orange">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><img src="../../assets/imgs/title.png"></ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <ion-list inset>
+        <ion-card *ngFor="let note of notes | async" (click)="getNote(note.createDate)" style="border-left: orange 2px solid">
+            <ion-card-content>
+              <ion-card-title style="font-size: 14px; font-weight: bold">
+                {{ note.title }}
+              </ion-card-title>
+              <hr />
+              <ion-item style="color: #777">{{ note.content }}</ion-item>
+            </ion-card-content>
+          </ion-card>
+  </ion-list>
+    <button ion-button color="orange" round style="font-size: 18px; margin: 20px; padding: 20px 24px; height: auto; right: 0; bottom: 0; position: absolute;" (click)= "addNote()"><ion-icon name="add"></ion-icon></button>
+</ion-content>
